@@ -4,6 +4,10 @@
     {
         static void Main(string[] args)
         {
+
+            var rejs = new Race("JensRace", 5000);
+
+            rejs.StartRace();
             /* 
 
 
