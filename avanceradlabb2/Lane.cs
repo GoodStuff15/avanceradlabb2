@@ -21,10 +21,12 @@
             DistanceTravelled = 0;
         }
 
-        public async Task Driving()
+        public async Task<Car> Driving()
         {
-            
+                await Task.Delay(1000);
+                Console.WriteLine("Driving: " + Car.Name);
 
+            return Car;
         }
     }
 }
