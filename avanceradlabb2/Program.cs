@@ -1,13 +1,21 @@
-﻿namespace avanceradlabb2
+﻿using System.Runtime.CompilerServices;
+
+namespace avanceradlabb2
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
+            var view = new View(2);
 
-            var rejs = new Race("JensRace", 5000);
+            view.Print();
 
-            rejs.StartRace();
+            
+            //var rejs = new Race("JensRace", 5000);
+
+            //await rejs.StartRace();
+
+
             /* 
 
 

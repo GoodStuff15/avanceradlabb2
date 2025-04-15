@@ -23,7 +23,14 @@
 
         public async Task Driving()
         {
+            Car.Start();
+
+            for (int i = 0; i < 100; i++) 
+            {
+                await Task.Delay(100);
+                Console.WriteLine(Car.Name);
             
+            }
 
         }
     }

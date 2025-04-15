@@ -22,11 +22,11 @@ namespace avanceradlabb2
             Participants.Add(new Car("StefanCar"));
         }
 
-        public void StartRace()
+        public async Task StartRace()
         {
             AddToLanes();
             StartMessage();
-            StartCarsAsync();
+            await StartCarsAsync();
         }
 
         public void AddToLanes()
@@ -42,17 +42,23 @@ namespace avanceradlabb2
         public void StartMessage()
         {
             Console.WriteLine("3");
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
             Console.WriteLine("2");
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
             Console.WriteLine("1");
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
             Console.WriteLine("AND THEY'RE OFF!");
         }
 
         public async Task StartCarsAsync()
         {
+            List<Task> vrroom = new List<Task>();
+            foreach(var lane in Lanes)
+            {
+                vrroom.Add(lane.Driving());
+            }
 
+            await Task.WhenAll(vrroom);
         }
     }
 }
