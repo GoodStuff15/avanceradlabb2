@@ -3,9 +3,14 @@
     public class Trouble_Delay : Trouble
     {
         public int Delay { get; set; }
-        public Trouble_Delay(int delay, string name, int prob, string desc) : base(name, prob, desc)
+        public Trouble_Delay(int delayMs, string name, int prob, string desc) : base(name, prob, desc)
         {
-            Delay = delay;
+            Delay = delayMs;
+        }
+
+        public int SetDelay()
+        {
+            return Delay;
         }
     }
 }

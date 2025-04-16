@@ -8,11 +8,16 @@ namespace avanceradlabb2
 {
     public class Trouble_Functionality : Trouble
     {
-        public int AdjustSpeed { get; set; }
+        private int _speedChange;
 
         public Trouble_Functionality(int adj, string name, int prob, string desc) : base(name, prob, desc)
         {
-            AdjustSpeed = adj;
+            _speedChange = adj;
+        }
+
+        public int AdjustSpeed()
+        {
+            return _speedChange;
         }
     }
 }

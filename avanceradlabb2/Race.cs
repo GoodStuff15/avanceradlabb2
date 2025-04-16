@@ -27,7 +27,7 @@ namespace avanceradlabb2
             AddToLanes();
             StartMessage();
             await StartCarsAsync();
-            Console.WriteLine("what");
+            Console.WriteLine("Race is over");
         }
 
         public void AddToLanes()
@@ -55,20 +55,24 @@ namespace avanceradlabb2
 
         public async Task StartCarsAsync()
         {
-            Task<Car> task1 = Lanes[0].Driving();
-            Task<Car> task2 = Lanes[1].Driving();
+            //Task<Car> task1 = Lanes[0].Driving();
+            //Task<Car> task2 = Lanes[1].Driving();
+            var drivingCars = new List<Task<Car>>();
 
-           var drivingCars = new List<Task<Car>> { task1, task2 };
-
+            foreach (var lane in Lanes)
+            {
+                Console.WriteLine($"Adding {lane.LaneNumber} to tasks ");
+                drivingCars.Add(lane.Driving());
+            }
            
+            while(drivingCars.Count > 0)
+            {
                 Task<Car> finished = await Task.WhenAny(drivingCars);
 
                 await finished;
-                Console.WriteLine("While drivingcars count");
-                drivingCars.Remove(finished);
-              
-               
-            
+
+                drivingCars.Remove(finished);      
+            }  
             Console.WriteLine("Race stop");
         }
     }
