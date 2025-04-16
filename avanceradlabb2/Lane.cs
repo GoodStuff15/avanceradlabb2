@@ -21,10 +21,27 @@
             DistanceTravelled = 0;
         }
 
-        public async Task Driving()
+        public async Task<Car> Driving()
         {
-            
+            Car.Start();
 
+            while(DistanceTravelled < 5000)
+            {
+                DistanceTravelled += KmhConverter(Car.CurrentSpeed);
+                await Task.Delay(1000);
+                Console.WriteLine($"Driving: {DistanceTravelled}" + Car.Name);
+
+            }
+            return Car;
         }
+
+        public int KmhConverter(int kmh)
+        {
+            double Mps = kmh / 3.6;
+
+            return (int)Mps;
+        }
+
+
     }
 }
