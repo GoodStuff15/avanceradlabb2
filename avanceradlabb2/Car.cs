@@ -15,6 +15,7 @@
 
         public void Start()
         {
+            Console.WriteLine($"{Name} quickly accelerates!!");
             CurrentSpeed = 120;
         }
 

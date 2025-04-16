@@ -15,7 +15,7 @@ namespace avanceradlabb2
             _speedChange = adj;
         }
 
-        public int AdjustSpeed()
+        public override int TroubleResult()
         {
             return _speedChange;
         }
