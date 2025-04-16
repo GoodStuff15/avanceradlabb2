@@ -8,9 +8,10 @@
             Delay = delayMs;
         }
 
-        public int SetDelay()
+        public override int TroubleResult()
         {
             return Delay;
         }
+
     }
 }

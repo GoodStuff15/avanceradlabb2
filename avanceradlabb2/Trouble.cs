@@ -14,6 +14,8 @@
             Probability = prob;
             EffectDesc = desc;
         }
+
+        public abstract int TroubleResult();
         
     }
 }
