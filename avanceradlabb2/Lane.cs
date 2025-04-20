@@ -53,7 +53,7 @@ namespace avanceradlabb2
 
             while(DistanceTravelled < Distance)
             {
-                Console.SetCursorPosition(0, 1);
+
                 DistanceTravelled += KmhConverter(Car.CurrentSpeed);
                 await Task.Delay(1000);
                 _troubleTimer++;

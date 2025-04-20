@@ -89,6 +89,7 @@ namespace avanceradlabb2
             Thread.Sleep(1000);
          
             Console.WriteLine("AND THEY'RE OFF!");
+            Thread.Sleep(1000);
         }
 
         public async Task StartCarsAsync()
@@ -128,7 +129,7 @@ namespace avanceradlabb2
                     Console.WriteLine($"{finished.Result.Car.Name} has crossed the finish line! Time: ");
                 }
                 placement++;
-                Console.WriteLine(finished.Result.Stopwatch.Elapsed.Minutes.ToString("D2") + ":" + finished.Result.Stopwatch.Elapsed.Seconds.ToString("D2"));
+                Console.WriteLine(finished.Result.Stopwatch.Elapsed.Minutes.ToString("D2") + ":" + finished.Result.Stopwatch.Elapsed.Seconds.ToString("D2") + "\n");
                 lanes.Remove(finished);
                 
              
